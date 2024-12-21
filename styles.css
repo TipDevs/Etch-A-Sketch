@@ -5,7 +5,7 @@
   }
 
   body {
-    scroll-behavior: unset;
+    overflow: hidden;
     display: flex;
     height: 100vh;
     flex: 1;
