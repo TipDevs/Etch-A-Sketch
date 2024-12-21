@@ -36,6 +36,13 @@ function activateCanvas(size) {
                 squareDivs.style.backgroundColor = getRandomColor();
             })
         });
+
+        // button to restore the webpage to initial state.
+        resetBtn.addEventListener('click', () => {
+            canvas.removeChild(squareDivs);
+            canvas.setAttribute("style", 'opacity: 10%; background-color: #272829; box-shadow: 10px 10px 40px #272829;');
+            inputValue.value = '';
+        });
     }
 }
 
