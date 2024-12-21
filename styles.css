@@ -23,3 +23,10 @@
     justify-content: center;
     border-radius: 10px 0 0 10px;
   }
+
+  #submit-container, .color-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
