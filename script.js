@@ -29,6 +29,13 @@ function activateCanvas(size) {
                 squareDivs.style.backgroundColor = '#030387';
             })
         });
+
+        // button to activate random color option when mouse is hovering over the square divs
+        randomColorBtn.addEventListener('click', () => {
+            squareDivs.addEventListener("mouseover", () => {
+                squareDivs.style.backgroundColor = getRandomColor();
+            })
+        });
     }
 }
 
