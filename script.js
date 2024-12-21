@@ -10,3 +10,17 @@ canvasSize = 400;
 
 // Add opacity and faded color to sketch container on window load.
 canvas.setAttribute("style", 'opacity: 10%; background-color: #272829; box-shadow: 5px 5px 40px #272829;');
+
+// function to run which the square divs base on user input and when create button was clicked.
+function activateCanvas(size) {
+    canvas.setAttribute('style', 'display: flex;');
+    canvas.innerHTML = ''; // Enables the sketch container to be empty initially
+    for (i = 0; i < (size * size); i++) {
+        const squareDivSize = canvasSize / size;
+        let squareDivs = document.createElement('div');
+        squareDivs.classList.add('square-divs');
+        squareDivs.style.width = `${squareDivSize}px`
+        squareDivs.style.height = `${squareDivSize}px`
+        sketchContainer.appendChild(squareDivs);
+    }
+}
