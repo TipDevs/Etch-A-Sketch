@@ -24,3 +24,16 @@ function activateCanvas(size) {
         sketchContainer.appendChild(squareDivs);
     }
 }
+
+/* button that trigger the create square 
+divs function and create square divs in the container
+ base on the user input if user input is not less 16 and not greater than 100*/
+ createBtn.addEventListener('click', () => {
+    const size = inputValue.value;
+    if (size >= 16 && size < 101){
+        activateCanvas(size);
+    }
+    else {
+        alert("Please input a value from 16 to 100");
+    }
+});
