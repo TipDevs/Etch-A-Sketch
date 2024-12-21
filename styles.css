@@ -30,3 +30,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  #submit-container > * {
+    margin-top: 10px;
+    color: white;
+  }
+  
+  #grid-number {
+    color: initial;
+  }
