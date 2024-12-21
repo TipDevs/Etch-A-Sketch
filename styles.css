@@ -7,8 +7,13 @@
   body {
     display: flex;
     height: 100vh;
+    flex: 1;
     align-items: center;
     justify-content: center;
+    /* @media (max-width: 500px) {
+      flex-direction: column;
+      padding: 20px;
+    } */
   }
 
   #left-side-container {
@@ -22,6 +27,17 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px 0 0 10px;
+    /* @media (max-width: 500px) {
+      flex-direction: row;
+      width: 400px;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 400px;
+      order: 1;
+      height: 100px;
+      flex: 0.5;
+      border-radius: 0 0 10px 10px;
+    } */
   }
 
   #submit-container, .color-btn {
@@ -49,6 +65,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
+    /* @media (max-width: 500px) {
+      flex: 2;
+    } */
   }
 
   #create-btn, #reset-btn {
