@@ -50,3 +50,33 @@
     justify-content: center;
     align-content: center;
   }
+
+  #create-btn, #reset-btn {
+    background-color: rgba(0, 0, 0, 0.55);
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  #create-btn:hover, #reset-btn:hover {
+    background-color: black;
+  }
+  button, input{
+    width: 10em;
+  }
+  .color-btn :where(#single-color-btn, #random-color-btn) {
+    background-color: #494744af;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  .color-btn > #single-color-btn:hover {
+    background-color: #030387;
+  }
+
+  .color-btn > #random-color-btn:hover {
+    background-color: rgb(31, 48, 31);
+  }
