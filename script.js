@@ -14,7 +14,7 @@ canvas.setAttribute('style', canvasInitialDisplay);
 
 // function to run which the square divs base on user input and when create button was clicked.
 function activateCanvas(size) {
-    canvas.setAttribute('style', 'display: flex;');
+    canvas.setAttribute('style', canvasInitialDisplay = '');
     canvas.innerHTML = ''; // Enables the sketch container to be empty initially
     for (i = 0; i < (size * size); i++) {
         const squareDivSize = canvasSize / size;
