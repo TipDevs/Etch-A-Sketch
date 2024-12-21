@@ -44,3 +44,13 @@ divs function and create square divs in the container
         alert("Please input a value from 16 to 100");
     }
 });
+
+// a function to run that get random color when the random color button was clicked.
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let colors = "#";
+    for (let i = 0; i < 6; i++) {
+        colors += letters[Math.floor(Math.random()*16)];
+    }
+    return colors;
+}
