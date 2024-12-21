@@ -10,7 +10,7 @@ canvasSize = 400;
 let canvasInitialDisplay = 'opacity: 10%; background-color: #272829; box-shadow: 5px 5px 40px #272829;'
 
 // Add opacity and faded color to sketch container on window load.
-canvas.setAttribute("style", 'opacity: 10%; background-color: #272829; box-shadow: 5px 5px 40px #272829;');
+canvas.setAttribute('style', canvasInitialDisplay);
 
 // function to run which the square divs base on user input and when create button was clicked.
 function activateCanvas(size) {
@@ -41,7 +41,7 @@ function activateCanvas(size) {
         // button to restore the webpage to initial state.
         resetBtn.addEventListener('click', () => {
             canvas.removeChild(squareDivs);
-            canvas.setAttribute("style", 'opacity: 10%; background-color: #272829; box-shadow: 10px 10px 40px #272829;');
+            canvas.setAttribute("style", canvasInitialDisplay);
             inputValue.value = '';
         });
     }
