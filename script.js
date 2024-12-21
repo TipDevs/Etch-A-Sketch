@@ -21,7 +21,7 @@ function activateCanvas(size) {
         squareDivs.classList.add('square-divs');
         squareDivs.style.width = `${squareDivSize}px`
         squareDivs.style.height = `${squareDivSize}px`
-        sketchContainer.appendChild(squareDivs);
+        canvas.appendChild(squareDivs);
 
         // button to activate single color option when mouse is hovering over the square divs
         singleColorBtn.addEventListener('click', () => {
