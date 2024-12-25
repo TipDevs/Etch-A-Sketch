@@ -71,7 +71,7 @@
     } */
   }
 
-  #create-btn, #reset-btn {
+  #eraser-btn, #reset-btn {
     background-color: rgba(0, 0, 0, 0.55);
     color: white;
     border: none;
@@ -79,7 +79,7 @@
     border-radius: 10px;
   }
 
-  #create-btn:hover, #reset-btn:hover {
+  #eraser-btn:hover, #reset-btn:hover {
     background-color: black;
   }
   button, input{
