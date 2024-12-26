@@ -73,6 +73,20 @@ function resetCanvas() {
 }
 resetCanvas();
 
+// function to erase the color from the canvas if the eraser button was clicked.
+function eraseCanvas() {
+    // button to erase the canvas by removing the square divs background color.
+    eraserBtn.addEventListener('click', () => {
+        document.querySelectorAll('.square-divs').forEach(squareDivs => {
+            squareDivs.addEventListener('mouseover', () => {
+                squareDivs.style.backgroundColor = '';
+            });
+        });
+    });
+}
+
+eraseCanvas();
+
 /* button that trigger the create square 
 divs function and create square divs in the container
  base on the user input if user input is not less 16 and not greater than 100*/
