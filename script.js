@@ -1,7 +1,7 @@
 // Global variable declarations and assignments
 const canvas = document.querySelector('#canvas'),
 inputValue = document.querySelector("#grid-number"),
-createBtn = document.querySelector('#create-btn'),
+eraserBtn = document.querySelector('#eraser-btn'),
 resetBtn = document.querySelector('#reset-btn'),
 randomColorBtn = document.querySelector('#random-color-btn'),
 singleColorBtn = document.querySelector('#single-color-btn'),
@@ -23,35 +23,14 @@ function activateCanvas(size) {
         squareDivs.style.width = `${squareDivSize}px`
         squareDivs.style.height = `${squareDivSize}px`
         canvas.appendChild(squareDivs);
-
-        // button to activate single color option when mouse is hovering over the square divs
-        singleColorBtn.addEventListener('click', () => {
-            squareDivs.addEventListener("mouseover", () => {
-                squareDivs.style.backgroundColor = '#030387';
-            })
-        });
-
-        // button to activate random color option when mouse is hovering over the square divs
-        randomColorBtn.addEventListener('click', () => {
-            squareDivs.addEventListener("mouseover", () => {
-                squareDivs.style.backgroundColor = getRandomColor();
-            })
-        });
-
-        // button to restore the webpage to initial state.
-        resetBtn.addEventListener('click', () => {
-            canvas.removeChild(squareDivs);
-            canvas.setAttribute("style", canvasInitialDisplay);
-            inputValue.value = '';
-        });
     }
 }
 
 /* button that trigger the create square 
 divs function and create square divs in the container
  base on the user input if user input is not less 16 and not greater than 100*/
- createBtn.addEventListener('click', () => {
-    const size = inputValue.value;
+ inputValue.addEventListener('input', () => {
+    const size = parseInt(inputValue.value);
     if (size >= 16 && size < 101){
         activateCanvas(size);
     }
@@ -69,3 +48,33 @@ function getRandomColor() {
     }
     return colors;
 }
+
+// function that add color to the canvas when one of the color buttons is click.
+function addColorsToCanvas() {
+    // button to activate single color option when mouse is hovering over the square divs
+    singleColorBtn.addEventListener('click', () => {
+        squareDivs.addEventListener("mouseover", () => {
+            squareDivs.style.backgroundColor = '#030387';
+        })
+    });
+
+    // button to activate random color option when mouse is hovering over the square divs
+    randomColorBtn.addEventListener('click', () => {
+        squareDivs.addEventListener("mouseover", () => {
+            squareDivs.style.backgroundColor = getRandomColor();
+        })
+    });
+}
+
+addColorsToCanvas();
+
+// function to restore the canvas to initial state when resetBtn is click.
+function resetCanvas() {
+    // button to restore the webpage to initial state.
+    resetBtn.addEventListener('click', () => {
+        canvas.removeChild(squareDivs);
+        canvas.setAttribute("style", canvasInitialDisplay);
+        inputValue.value = '';
+    });
+}
+resetCanvas();
