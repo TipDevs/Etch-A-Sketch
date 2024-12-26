@@ -6,6 +6,7 @@ resetBtn = document.querySelector('#reset-btn'),
 randomColorBtn = document.querySelector('#random-color-btn'),
 singleColorBtn = document.querySelector('#single-color-btn'),
 leftSideContainer = document.querySelector('#left-side-container'),
+gridLineBtn = document.querySelector('#grid-line-btn'),
 canvasSize = 400;
 let canvasInitialDisplay = 'opacity: 10%; background-color: #272829; box-shadow: 5px 5px 40px #272829;'
 
