@@ -16,14 +16,16 @@ canvas.setAttribute('style', canvasInitialDisplay);
 function activateCanvas(size) {
     canvas.setAttribute('style', canvasInitialDisplay = '');
     canvas.innerHTML = ''; // Enables the sketch container to be empty initially
+    const fragment = document.createDocumentFragment();
     for (i = 0; i < (size * size); i++) {
         const squareDivSize = canvasSize / size;
         let squareDivs = document.createElement('div');
         squareDivs.classList.add('square-divs');
         squareDivs.style.width = `${squareDivSize}px`
         squareDivs.style.height = `${squareDivSize}px`
-        canvas.appendChild(squareDivs);
+        fragment.appendChild(squareDivs);
     }
+    canvas.appendChild(fragment);
 }
 
 /* button that trigger the create square 
