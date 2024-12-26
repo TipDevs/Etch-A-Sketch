@@ -35,6 +35,7 @@ divs function and create square divs in the container
     const size = parseInt(inputValue.value);
     if (size >= 16 && size < 101){
         activateCanvas(size);
+        console.log(typeof(size));
     }
     else {
         alert("Please input a value from 16 to 100");
@@ -55,16 +56,20 @@ function getRandomColor() {
 function addColorsToCanvas() {
     // button to activate single color option when mouse is hovering over the square divs
     singleColorBtn.addEventListener('click', () => {
-        squareDivs.addEventListener("mouseover", () => {
-            squareDivs.style.backgroundColor = '#030387';
+        document.querySelectorAll('.square-divs').forEach(squareDivs => {
+            squareDivs.addEventListener("mouseover", () => {
+                squareDivs.style.backgroundColor = '#030387';
+            })
         })
     });
 
     // button to activate random color option when mouse is hovering over the square divs
     randomColorBtn.addEventListener('click', () => {
-        squareDivs.addEventListener("mouseover", () => {
-            squareDivs.style.backgroundColor = getRandomColor();
-        })
+        document.querySelectorAll('.square-divs').forEach(squareDivs => {
+            squareDivs.addEventListener("mouseover", () => {
+                squareDivs.style.backgroundColor = getRandomColor();
+        });
+        });
     });
 }
 
