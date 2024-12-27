@@ -106,15 +106,19 @@ showGridLines();
     let enterMessage = document.createElement('p');
     enterMessage.textContent = 'Click Enter';
     enterMessage.style.color = '#ffffff';
-    submitContainer.appendChild(enterMessage);
+    inputValue.addEventListener('input', () => {
+        submitContainer.appendChild(enterMessage);
+    })
 
     inputValue.addEventListener('keydown', (e) => {
         const size = parseInt(inputValue.value);
         if (e.key === 'Enter'){
             if (size >= 16 && size < 101){
+            submitContainer.removeChild(enterMessage);
             activateCanvas(size);
         }
         else {
+            submitContainer.removeChild(enterMessage);
             alert("Please input a value from 16 to 100");
         }
     }
