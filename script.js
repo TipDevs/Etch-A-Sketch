@@ -7,6 +7,7 @@ randomColorBtn = document.querySelector('#random-color-btn'),
 singleColorBtn = document.querySelector('#single-color-btn'),
 leftSideContainer = document.querySelector('#left-side-container'),
 gridLineBtn = document.querySelector('#grid-line-btn'),
+submitContainer = document.querySelector('#submit-container'),
 canvasSize = 400;
 let canvasInitialDisplay = 'opacity: 10%; background-color: #272829; box-shadow: 5px 5px 40px #272829;'
 
@@ -24,6 +25,7 @@ function activateCanvas(size) {
         squareDivs.classList.add('square-divs');
         squareDivs.style.width = `${squareDivSize}px`
         squareDivs.style.height = `${squareDivSize}px`
+        squareDivs.classList.add('grid-lines')
         fragment.appendChild(squareDivs);
     }
     canvas.appendChild(fragment);
@@ -88,16 +90,38 @@ function eraseCanvas() {
 
 eraseCanvas();
 
-/* button that trigger the create square 
-divs function and create square divs in the container
+function showGridLines() {
+    gridLineBtn.addEventListener('click', () => {
+        document.querySelectorAll('.square-divs').forEach(squareDivs => {
+            squareDivs.classList.toggle('grid-lines');
+        })
+    })
+}
+
+showGridLines();
+
+/* function that activate the activateCanvas function and create square divs in the container
  base on the user input if user input is not less 16 and not greater than 100*/
- inputValue.addEventListener('input', () => {
-    const size = parseInt(inputValue.value);
-    if (size >= 16 && size < 101){
-        activateCanvas(size);
-        console.log(typeof(size));
+ function canvasActivator() {
+    let enterMessage = document.createElement('p');
+    enterMessage.textContent = 'Click Enter';
+    enterMessage.style.color = '#ffffff';
+    submitContainer.appendChild(enterMessage);
+
+    inputValue.addEventListener('keydown', (e) => {
+        const size = parseInt(inputValue.value);
+        if (e.key === 'Enter'){
+            if (size >= 16 && size < 101){
+            activateCanvas(size);
+        }
+        else {
+            alert("Please input a value from 16 to 100");
+        }
     }
-    else {
-        alert("Please input a value from 16 to 100");
-    }
-});
+    });
+    inputValue.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') inputValue.value = '';
+    })
+ }
+
+ canvasActivator();
