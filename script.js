@@ -129,3 +129,31 @@ showGridLines();
  }
 
  canvasActivator();
+
+// function to run when the webpage is open and load on any devices smaller than laptop
+function nonLaptopDisplay() {
+    const tabletMediaQuery = window.matchMedia('(max-width: 768px)'),
+        mobileMediaQuery = window.matchMedia('(max-width: 425px)');
+    if(tabletMediaQuery.matches) {
+        document.querySelector('body').innerHTML = '';
+        let screenMessageContainer = document.createElement('div'),
+        welcomeMessage = document.createElement('p'),
+        screenMessage = document.createElement('p'),
+        messageStyle = 'color: red; text-align: center; font-size: 2em;';
+        welcomeMessage.textContent = 'Welcome to Etch A Sketch.'
+        screenMessage.textContent = `Note: Canvas display can only work on Laptop or Desktop devices
+         because Canvas display for devices smaller than Laptop are under construction`;
+        welcomeMessage.setAttribute('style', messageStyle);
+        screenMessage.setAttribute('style', messageStyle);
+        screenMessageContainer.setAttribute('style', `max-width: 400px; max-height: fit-content;
+             box-shadow: 5px 5px 20px #494744; padding: 10px;`)
+        screenMessageContainer.appendChild(welcomeMessage);
+        screenMessageContainer.appendChild(screenMessage);
+        document.querySelector('body').appendChild(screenMessageContainer);
+    }
+    else if (mobileMediaQuery.matches) {
+        document.querySelector('body').setAttribute('style', 'padding: 0 30px;');
+    }
+}
+
+nonLaptopDisplay();
